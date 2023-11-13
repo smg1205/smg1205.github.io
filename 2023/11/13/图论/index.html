@@ -16,15 +16,15 @@
   <meta name="author" content="smg">
   <meta name="keywords" content="">
   
-    <meta name="description" content="图论基础算法DFS n个数字 有多少排列顺序DFS，即深搜，对一棵树，选择不走到结束，不回头的算法，使用递归实现. 给定一个整数 n，将数字1 ~ n排成一排，将会有很多种排列方法。现在，请你按照字典序将所有的排列方法输出。 范围$$1 &lt;&#x3D; n &lt;&#x3D; 7$$ 12345678910111213141516171819202122232425262728293031">
+    <meta name="description" content="图论基础算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图论基础">
 <meta property="og:url" content="http://example.com/2023/11/13/%E5%9B%BE%E8%AE%BA/index.html">
 <meta property="og:site_name" content="smg&#39;s wiki">
-<meta property="og:description" content="图论基础算法DFS n个数字 有多少排列顺序DFS，即深搜，对一棵树，选择不走到结束，不回头的算法，使用递归实现. 给定一个整数 n，将数字1 ~ n排成一排，将会有很多种排列方法。现在，请你按照字典序将所有的排列方法输出。 范围$$1 &lt;&#x3D; n &lt;&#x3D; 7$$ 12345678910111213141516171819202122232425262728293031">
+<meta property="og:description" content="图论基础算法">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-11-13T14:02:22.031Z">
-<meta property="article:modified_time" content="2023-11-13T14:02:45.847Z">
+<meta property="article:modified_time" content="2023-11-13T14:04:51.493Z">
 <meta property="article:author" content="smg">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
@@ -281,7 +281,9 @@
             
               <div class="markdown-body">
                 
-                <h2 id="图论基础算法"><a href="#图论基础算法" class="headerlink" title="图论基础算法"></a>图论基础算法</h2><h3 id="DFS-n个数字-有多少排列顺序"><a href="#DFS-n个数字-有多少排列顺序" class="headerlink" title="DFS n个数字 有多少排列顺序"></a>DFS n个数字 有多少排列顺序</h3><p>DFS，即深搜，对一棵树，选择不走到结束，不回头的算法，使用递归实现.</p>
+                <h2 id="图论基础算法"><a href="#图论基础算法" class="headerlink" title="图论基础算法"></a>图论基础算法</h2><span id="more"></span>
+
+<h3 id="DFS-n个数字-有多少排列顺序"><a href="#DFS-n个数字-有多少排列顺序" class="headerlink" title="DFS n个数字 有多少排列顺序"></a>DFS n个数字 有多少排列顺序</h3><p>DFS，即深搜，对一棵树，选择不走到结束，不回头的算法，使用递归实现.</p>
 <p>给定一个整数 n，将数字1 ~ n排成一排，将会有很多种排列方法。现在，请你按照字典序将所有的排列方法输出。</p>
 <p>范围<br>$$<br>1 &lt;&#x3D; n &lt;&#x3D; 7<br>$$</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-type">int</span> n, cot[<span class="hljs-number">15</span>];<br><span class="hljs-type">bool</span> st[<span class="hljs-number">15</span>];<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-type">int</span> u)</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-keyword">if</span>(u == n)<br>	&#123;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>;i &lt; n;i ++) cout &lt;&lt; cot[i] &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span>;<br>		cout &lt;&lt; endl;<br>		<span class="hljs-keyword">return</span> ;<br>	&#125;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= n;i ++)<br>	&#123;<br>		<span class="hljs-keyword">if</span>(!st[i])<br>		&#123;<br>			cot[u] = i;<br>			st[u] = <span class="hljs-literal">true</span>;<br>			<span class="hljs-built_in">dfs</span>(u + <span class="hljs-number">1</span>);<br>			st[u] = <span class="hljs-literal">false</span>; <br>		&#125;<br>	&#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	cin &gt;&gt; n;<br>	<span class="hljs-built_in">dfs</span>(<span class="hljs-number">0</span>);<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-built_in">solve</span>();<br><br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
