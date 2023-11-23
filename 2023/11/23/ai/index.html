@@ -16,22 +16,22 @@
   <meta name="author" content="smg">
   <meta name="keywords" content="">
   
-    <meta name="description" content="DP">
+    <meta name="description" content="模型学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DP的简单应用">
-<meta property="og:url" content="http://example.com/2023/11/23/%E7%AE%80%E5%8D%95dp/index.html">
+<meta property="og:title" content="模型笔记">
+<meta property="og:url" content="http://example.com/2023/11/23/ai/index.html">
 <meta property="og:site_name" content="smg&#39;s wiki">
-<meta property="og:description" content="DP">
+<meta property="og:description" content="模型学习">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-11-23T10:43:03.358Z">
-<meta property="article:modified_time" content="2023-11-23T10:45:11.205Z">
+<meta property="article:published_time" content="2023-11-23T11:44:10.639Z">
+<meta property="article:modified_time" content="2023-11-23T11:47:39.101Z">
 <meta property="article:author" content="smg">
-<meta property="article:tag" content="算法">
+<meta property="article:tag" content="模型">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>DP的简单应用 - smg&#39;s wiki</title>
+  <title>模型笔记 - smg&#39;s wiki</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -209,7 +209,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="DP的简单应用"></span>
+            <span id="subtitle" data-typed-text="模型笔记"></span>
           
         </div>
 
@@ -225,7 +225,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-11-23 18:43" pubdate>
+        <time datetime="2023-11-23 19:44" pubdate>
           2023年11月23日 晚上
         </time>
       </span>
@@ -237,7 +237,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          346 字
+          1.1k 字
         
       </span>
     
@@ -276,22 +276,24 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">DP的简单应用</h1>
+            <h1 id="seo-header">模型笔记</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="DP"><a href="#DP" class="headerlink" title="DP"></a>DP</h2><span id="more"></span>
+                <h2 id="模型学习"><a href="#模型学习" class="headerlink" title="模型学习"></a>模型学习</h2><span id="more"></span>
 
-<h3 id="01背包问题"><a href="#01背包问题" class="headerlink" title="01背包问题"></a>01背包问题</h3><p>对于n个物品，有一个体积为v的背包，且每个物品都有体积，背包所能放下的物品的最大值</p>
-<p><a target="_blank" rel="noopener" href="https://www.acwing.com/activity/content/code/content/7063878/">AcWing 2. 01背包问题 - AcWing</a></p>
-<h3 id="完全背包问题"><a href="#完全背包问题" class="headerlink" title="完全背包问题"></a>完全背包问题</h3><p>对于n个物品，有一个体积为v的背包，且每个物品都有体积，每个物品都可以选取任意数量，背包所能放下的物品的最大值</p>
-<p><a target="_blank" rel="noopener" href="https://www.acwing.com/activity/content/code/content/7414305/">AcWing 3. 完全背包问题 - AcWing</a></p>
-<h3 id="多重背包问题"><a href="#多重背包问题" class="headerlink" title="多重背包问题"></a>多重背包问题</h3><p>对于n个物品，有一个体积为v的背包，且每个物品都有体积，每个物品都可以选取有限数量，背包所能放下的物品的最大值</p>
-<p><a target="_blank" rel="noopener" href="https://www.acwing.com/activity/content/code/content/7415754/">AcWing 4. 多重背包问题 - AcWing</a></p>
-<h3 id="多重背包问题-Ⅱ"><a href="#多重背包问题-Ⅱ" class="headerlink" title="多重背包问题 Ⅱ"></a>多重背包问题 Ⅱ</h3><p>对于n个物品，有一个体积为v的背包，且每个物品都有体积，每个物品都可以选取有限数量，背包所能放下的物品的最大值</p>
-<p><a target="_blank" rel="noopener" href="https://www.acwing.com/activity/content/code/content/7416529/">AcWing 5. 多重背包问题 II - AcWing</a></p>
-<h3 id="分组背包问题"><a href="#分组背包问题" class="headerlink" title="分组背包问题"></a>分组背包问题</h3><p><a target="_blank" rel="noopener" href="https://www.acwing.com/activity/content/code/content/7416793/">AcWing 9. 分组背包问题 - AcWing</a></p>
+<h3 id="读入图片-原始方法"><a href="#读入图片-原始方法" class="headerlink" title="读入图片 原始方法"></a>读入图片 原始方法</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">read</span>():<br>    pics = []<br>    <span class="hljs-keyword">for</span> dirpath, dirname, files <span class="hljs-keyword">in</span> os.walk(<span class="hljs-string">r&#x27;dataset\training_data&#x27;</span>):<br>        <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> files:<br>            <span class="hljs-comment"># 避免读错</span><br>            <span class="hljs-keyword">if</span> item.find(<span class="hljs-string">&quot;.jpg&quot;</span>) != -<span class="hljs-number">1</span>:<br>                <span class="hljs-comment"># 如果深度不是3，会报错</span><br>                pic = cv2.imread(dirpath+<span class="hljs-string">&#x27;/&#x27;</span>+item)<br>                <span class="hljs-comment"># 图片的大小重整</span><br>                pic = cv2.resize(pic,(<span class="hljs-number">112</span>,<span class="hljs-number">112</span>))<br>                <span class="hljs-built_in">print</span>(pic.shape)<br>                <span class="hljs-comment"># 转为RGB</span><br>                pir_arr = Image.fromarray(cv2.cvtColor(pic,cv2.COLOR_BGR2RGB))<br>                <span class="hljs-comment"># 张量化</span><br>                pir_ten = toTen(pir_arr)<br>                <span class="hljs-comment"># 将图片进行归一化</span><br>                pir_ten = transforms.Normalize(mean=[<span class="hljs-number">0.485</span>, <span class="hljs-number">0.456</span>, <span class="hljs-number">0.406</span> ], std=[<span class="hljs-number">0.229</span>, <span class="hljs-number">0.224</span>, <span class="hljs-number">0.225</span> ])(pir_ten)<br>                <span class="hljs-comment"># 下面的代码在不同模型训练中不相同</span><br>                <span class="hljs-keyword">if</span> dirpath[-<span class="hljs-number">1</span>] == <span class="hljs-string">&#x27;1&#x27;</span>:<br>                    pics.append((pir_ten,<span class="hljs-number">1</span>))<br>                <span class="hljs-keyword">else</span>:<br>                    pics.append((pir_ten,<span class="hljs-number">0</span>))<br>    <span class="hljs-keyword">return</span> pics   <br></code></pre></td></tr></table></figure>
+
+<h3 id="二分类"><a href="#二分类" class="headerlink" title="二分类"></a>二分类</h3><p>设计思路</p>
+<p>将需要分类的图片分为两个文件夹，读入图片，注意图片的深度，在读入图片的同时，更改图片的大小，将图片和标签一同读入，做到分类的效果</p>
+<h3 id="多分类"><a href="#多分类" class="headerlink" title="多分类"></a>多分类</h3><p>设计思路</p>
+<p>和二分类相似，也是将图片分为多个文件夹，使用数字来分类，读入图片也读入标签，更改图片大小，将图片转换为张量，并且将图片转为RGB，方便后面进行，在读入时，将图片和标签一同读入，然后进行训练</p>
+<h3 id="模糊分类"><a href="#模糊分类" class="headerlink" title="模糊分类"></a>模糊分类</h3><p>设计思路</p>
+<p>感觉和二分类有些相似，无非就是0和1，0就是不相似，1就是相似，只不过在读入图片时，需要将相同物品的图片分到1标签中进行读入，不同的图片和0标签一起读入，训练出来的模型在进行推理的同时，正确率的计算也需要注意，偏向1就是相似，0就是不相似</p>
+<h3 id="卷积网络"><a href="#卷积网络" class="headerlink" title="卷积网络"></a>卷积网络</h3><p>对于图片进行二分类或者多分类的时候使用卷积网络</p>
+<p>对于神经网络，卷积网络通过卷积层来提取图片的特征，可以有效的处理图像的局部结构，通过池化层来进行特征的降维，并且进行权值共享，降低了网络的复杂性，通过3 * 3的卷积核来进行卷积。</p>
+<h3 id="孪生网络"><a href="#孪生网络" class="headerlink" title="孪生网络"></a>孪生网络</h3><p>对于模糊分类使用孪生网络，孪生网络更易于做集成学习，从语义的相似性上学习来估测两个输入的距离</p>
 
                 
               </div>
@@ -304,7 +306,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E7%AE%97%E6%B3%95/" class="print-no-link">#算法</a>
+        <a href="/tags/%E6%A8%A1%E5%9E%8B/" class="print-no-link">#模型</a>
       
     </div>
   
@@ -316,8 +318,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>DP的简单应用</div>
-      <div>http://example.com/2023/11/23/简单dp/</div>
+      <div>模型笔记</div>
+      <div>http://example.com/2023/11/23/ai/</div>
     </div>
     <div class="license-meta">
       
@@ -361,18 +363,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/11/23/ai/" title="模型笔记">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">模型笔记</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/11/21/share/" title="share">
-                        <span class="hidden-mobile">share</span>
+                      <a href="/2023/11/23/%E7%AE%80%E5%8D%95dp/" title="DP的简单应用">
+                        <span class="hidden-mobile">DP的简单应用</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
