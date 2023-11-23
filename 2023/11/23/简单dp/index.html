@@ -16,22 +16,22 @@
   <meta name="author" content="smg">
   <meta name="keywords" content="">
   
-    <meta name="description" content="一些">
+    <meta name="description" content="DP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="share">
-<meta property="og:url" content="http://example.com/2023/11/21/share/index.html">
+<meta property="og:title" content="DP的简单应用">
+<meta property="og:url" content="http://example.com/2023/11/23/%E7%AE%80%E5%8D%95dp/index.html">
 <meta property="og:site_name" content="smg&#39;s wiki">
-<meta property="og:description" content="一些">
+<meta property="og:description" content="DP">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-11-21T13:02:31.196Z">
-<meta property="article:modified_time" content="2023-11-21T13:02:18.398Z">
+<meta property="article:published_time" content="2023-11-23T10:43:03.358Z">
+<meta property="article:modified_time" content="2023-11-23T10:42:44.284Z">
 <meta property="article:author" content="smg">
-<meta property="article:tag" content="normal">
+<meta property="article:tag" content="algorithms">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>share - smg&#39;s wiki</title>
+  <title>DP的简单应用 - smg&#39;s wiki</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -209,7 +209,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="share"></span>
+            <span id="subtitle" data-typed-text="DP的简单应用"></span>
           
         </div>
 
@@ -225,8 +225,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-11-21 21:02" pubdate>
-          2023年11月21日 晚上
+        <time datetime="2023-11-23 18:43" pubdate>
+          2023年11月23日 晚上
         </time>
       </span>
     
@@ -237,7 +237,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          528 字
+          346 字
         
       </span>
     
@@ -276,17 +276,22 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">share</h1>
+            <h1 id="seo-header">DP的简单应用</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="一些"><a href="#一些" class="headerlink" title="一些"></a>一些</h3><span id="more"></span>
+                <h2 id="DP"><a href="#DP" class="headerlink" title="DP"></a>DP</h2><span id="more"></span>
 
-<p>牛客 <a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/contest/69695/B">B-小红的01连续段_第20届纪念款-牛客周赛 Round 20 (nowcoder.com)</a></p>
-<p>一发过</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	string s;cin &gt;&gt; s;<span class="hljs-type">int</span> ans = <span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>;i &lt; s.<span class="hljs-built_in">size</span>();)<br>	&#123;<br>		<span class="hljs-type">int</span> j = i, flag = <span class="hljs-number">0</span>;<br>		<span class="hljs-keyword">for</span>(;j &lt; s.<span class="hljs-built_in">size</span>();j ++)<br>		&#123;<br>			<span class="hljs-keyword">if</span>(!flag &amp;&amp; s[j] != <span class="hljs-string">&#x27;?&#x27;</span>) flag = s[j];<br>			<span class="hljs-keyword">if</span>(!flag || s[j] == <span class="hljs-string">&#x27;?&#x27;</span> || s[j] == flag) <span class="hljs-keyword">continue</span>;<br>			<span class="hljs-keyword">else</span> <span class="hljs-keyword">break</span>;<br>		&#125;<br>		ans = <span class="hljs-built_in">max</span>(j - i, ans);<br>		<span class="hljs-keyword">while</span>(s[j - <span class="hljs-number">1</span>] == <span class="hljs-string">&#x27;?&#x27;</span> &amp;&amp; j != s.<span class="hljs-built_in">size</span>()) j --;<br>		i = j;<br>	&#125;<br>	cout &lt;&lt; ans &lt;&lt; endl;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-built_in">solve</span>();<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-
+<h3 id="01背包问题"><a href="#01背包问题" class="headerlink" title="01背包问题"></a>01背包问题</h3><p>对于n个物品，有一个体积为v的背包，且每个物品都有体积，背包所能放下的物品的最大值</p>
+<p><a target="_blank" rel="noopener" href="https://www.acwing.com/activity/content/code/content/7063878/">AcWing 2. 01背包问题 - AcWing</a></p>
+<h3 id="完全背包问题"><a href="#完全背包问题" class="headerlink" title="完全背包问题"></a>完全背包问题</h3><p>对于n个物品，有一个体积为v的背包，且每个物品都有体积，每个物品都可以选取任意数量，背包所能放下的物品的最大值</p>
+<p><a target="_blank" rel="noopener" href="https://www.acwing.com/activity/content/code/content/7414305/">AcWing 3. 完全背包问题 - AcWing</a></p>
+<h3 id="多重背包问题"><a href="#多重背包问题" class="headerlink" title="多重背包问题"></a>多重背包问题</h3><p>对于n个物品，有一个体积为v的背包，且每个物品都有体积，每个物品都可以选取有限数量，背包所能放下的物品的最大值</p>
+<p><a target="_blank" rel="noopener" href="https://www.acwing.com/activity/content/code/content/7415754/">AcWing 4. 多重背包问题 - AcWing</a></p>
+<h3 id="多重背包问题-Ⅱ"><a href="#多重背包问题-Ⅱ" class="headerlink" title="多重背包问题 Ⅱ"></a>多重背包问题 Ⅱ</h3><p>对于n个物品，有一个体积为v的背包，且每个物品都有体积，每个物品都可以选取有限数量，背包所能放下的物品的最大值</p>
+<p><a target="_blank" rel="noopener" href="https://www.acwing.com/activity/content/code/content/7416529/">AcWing 5. 多重背包问题 II - AcWing</a></p>
+<h3 id="分组背包问题"><a href="#分组背包问题" class="headerlink" title="分组背包问题"></a>分组背包问题</h3><p><a target="_blank" rel="noopener" href="https://www.acwing.com/activity/content/code/content/7416793/">AcWing 9. 分组背包问题 - AcWing</a></p>
 
                 
               </div>
@@ -299,7 +304,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/normal/" class="print-no-link">#normal</a>
+        <a href="/tags/algorithms/" class="print-no-link">#algorithms</a>
       
     </div>
   
@@ -311,8 +316,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>share</div>
-      <div>http://example.com/2023/11/21/share/</div>
+      <div>DP的简单应用</div>
+      <div>http://example.com/2023/11/23/简单dp/</div>
     </div>
     <div class="license-meta">
       
@@ -324,7 +329,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年11月21日</div>
+          <div>2023年11月23日</div>
         </div>
       
       
@@ -356,18 +361,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/11/23/%E7%AE%80%E5%8D%95dp/" title="DP的简单应用">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">DP的简单应用</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/11/18/%E9%AB%98%E7%B2%BE/" title="高精度">
-                        <span class="hidden-mobile">高精度</span>
+                      <a href="/2023/11/21/share/" title="share">
+                        <span class="hidden-mobile">share</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
