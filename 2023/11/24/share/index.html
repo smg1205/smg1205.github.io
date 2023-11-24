@@ -16,24 +16,24 @@
   <meta name="author" content="smg">
   <meta name="keywords" content="">
   
-    <meta name="description" content="一些">
+    <meta name="description" content="string">
 <meta property="og:type" content="article">
-<meta property="og:title" content="share">
-<meta property="og:url" content="http://example.com/2023/11/21/share/index.html">
+<meta property="og:title" content="string">
+<meta property="og:url" content="http://example.com/2023/11/24/share/index.html">
 <meta property="og:site_name" content="smg&#39;s wiki">
-<meta property="og:description" content="一些">
+<meta property="og:description" content="string">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-11-21T13:02:31.196Z">
-<meta property="article:modified_time" content="2023-11-21T13:02:18.398Z">
+<meta property="article:published_time" content="2023-11-24T11:13:29.896Z">
+<meta property="article:modified_time" content="2023-11-24T11:15:42.933Z">
 <meta property="article:author" content="smg">
-<meta property="article:tag" content="normal">
+<meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>share - smg&#39;s wiki</title>
+  <title>string - smg&#39;s wiki</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -211,7 +211,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="share"></span>
+            <span id="subtitle" data-typed-text="string"></span>
           
         </div>
 
@@ -227,8 +227,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-11-21 21:02" pubdate>
-          2023年11月21日 晚上
+        <time datetime="2023-11-24 19:13" pubdate>
+          2023年11月24日 晚上
         </time>
       </span>
     
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          528 字
+          2k 字
         
       </span>
     
@@ -286,16 +286,20 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">share</h1>
+            <h1 id="seo-header">string</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="一些"><a href="#一些" class="headerlink" title="一些"></a>一些</h3><span id="more"></span>
+                <h2 id="string"><a href="#string" class="headerlink" title="string"></a>string</h2><span id="more"></span>
 
-<p>牛客 <a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/contest/69695/B">B-小红的01连续段_第20届纪念款-牛客周赛 Round 20 (nowcoder.com)</a></p>
-<p>一发过</p>
+<h3 id="1-string-字符串回溯"><a href="#1-string-字符串回溯" class="headerlink" title="1.string 字符串回溯"></a>1.string 字符串回溯</h3><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/contest/69695/B">B-小红的01连续段_第20届纪念款-牛客周赛 Round 20 (nowcoder.com)</a></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	string s;cin &gt;&gt; s;<span class="hljs-type">int</span> ans = <span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>;i &lt; s.<span class="hljs-built_in">size</span>();)<br>	&#123;<br>		<span class="hljs-type">int</span> j = i, flag = <span class="hljs-number">0</span>;<br>		<span class="hljs-keyword">for</span>(;j &lt; s.<span class="hljs-built_in">size</span>();j ++)<br>		&#123;<br>			<span class="hljs-keyword">if</span>(!flag &amp;&amp; s[j] != <span class="hljs-string">&#x27;?&#x27;</span>) flag = s[j];<br>			<span class="hljs-keyword">if</span>(!flag || s[j] == <span class="hljs-string">&#x27;?&#x27;</span> || s[j] == flag) <span class="hljs-keyword">continue</span>;<br>			<span class="hljs-keyword">else</span> <span class="hljs-keyword">break</span>;<br>		&#125;<br>		ans = <span class="hljs-built_in">max</span>(j - i, ans);<br>		<span class="hljs-keyword">while</span>(s[j - <span class="hljs-number">1</span>] == <span class="hljs-string">&#x27;?&#x27;</span> &amp;&amp; j != s.<span class="hljs-built_in">size</span>()) j --;<br>		i = j;<br>	&#125;<br>	cout &lt;&lt; ans &lt;&lt; endl;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-built_in">solve</span>();<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="2-tire树的思路和代码"><a href="#2-tire树的思路和代码" class="headerlink" title="2.tire树的思路和代码"></a>2.tire树的思路和代码</h3><p>tire树的思路 使用idx来完成string是否相等的判断和储存，对应的每一个新的string字符串都可以使用idx来存储，并且每一个新的字符串的idx值不相同，所以在查找和插入的函数内的p来得到每一个不同的值，存入cnt数组中</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">1e5</span> + <span class="hljs-number">10</span>;<br><span class="hljs-type">int</span> tire[N][<span class="hljs-number">27</span>], cnt[N], idx;<br><br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(string s)</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-type">int</span> p = <span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>;i &lt; s.<span class="hljs-built_in">size</span>();i ++)<br>	&#123;	<br>		<span class="hljs-type">int</span> u = s[i] - <span class="hljs-string">&#x27;a&#x27;</span>;<br>		<span class="hljs-keyword">if</span>(!tire[p][u]) tire[p][u] = idx ++;<br>		p = tire[p][u];<br>	&#125;<br>	cnt[p] ++;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">find</span><span class="hljs-params">(string s)</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-type">int</span> p = <span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>;i &lt; s.<span class="hljs-built_in">size</span>();i ++)<br>	&#123;<br>		<span class="hljs-type">int</span> u = s[i] - <span class="hljs-string">&#x27;a&#x27;</span>;<br>		<span class="hljs-keyword">if</span>(tire[p][u]) p = tire[p][u];<br>		<span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>	&#125;<br>	<span class="hljs-keyword">return</span> cnt[p];<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-type">int</span> n;cin &gt;&gt; n;<br>	<span class="hljs-keyword">while</span>(n --)<br>	&#123;<br>		<span class="hljs-type">char</span> op;string s;<br>		cin &gt;&gt; op &gt;&gt; s;<br>		<span class="hljs-keyword">if</span>(op == <span class="hljs-string">&#x27;I&#x27;</span>)<span class="hljs-built_in">insert</span>(s);<br>		<span class="hljs-keyword">else</span>	cout &lt;&lt; <span class="hljs-built_in">find</span>(s) &lt;&lt; endl;<br>	&#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-built_in">solve</span>();<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="3-字符串哈希"><a href="#3-字符串哈希" class="headerlink" title="3.字符串哈希"></a>3.字符串哈希</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">1e5</span> + <span class="hljs-number">10</span>, P = <span class="hljs-number">131</span>;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">unsigned</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> ull;<br>ull cnt[N], f[N];<br><br><span class="hljs-function">ull <span class="hljs-title">get</span><span class="hljs-params">(<span class="hljs-type">int</span> l,<span class="hljs-type">int</span> r)</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-keyword">return</span> cnt[r] - cnt[l - <span class="hljs-number">1</span>] * f[r - l + <span class="hljs-number">1</span>];<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-type">int</span> n, k;cin &gt;&gt; n &gt;&gt; k;<br>	string s;cin &gt;&gt; s;s = <span class="hljs-string">&#x27;3&#x27;</span> + s;<br>	f[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= n;i ++)<br>	&#123;<br>		cnt[i] = s[i] + cnt[i - <span class="hljs-number">1</span>] * P;<br>		f[i] = f[i - <span class="hljs-number">1</span>] * P;<br>	&#125;	<br>	<br>	<span class="hljs-keyword">while</span>(k --)<br>	&#123;<br>		<span class="hljs-type">int</span> l1, r1, l2, r2;cin &gt;&gt; l1 &gt;&gt; r1 &gt;&gt; l2 &gt;&gt; r2;<br>		<span class="hljs-keyword">if</span>(<span class="hljs-built_in">get</span>(l1,r1) == <span class="hljs-built_in">get</span>(l2,r2)) <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;Yes&quot;</span>);<br>		<span class="hljs-keyword">else</span> <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;No&quot;</span>);<br>	&#125;<br><br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-built_in">solve</span>();<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
                 
@@ -305,11 +309,32 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Arithmetic/" class="category-chain-item">Arithmetic</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
   
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/normal/" class="print-no-link">#normal</a>
+        <a href="/tags/%E7%AE%97%E6%B3%95/" class="print-no-link">#算法</a>
       
     </div>
   
@@ -321,8 +346,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>share</div>
-      <div>http://example.com/2023/11/21/share/</div>
+      <div>string</div>
+      <div>http://example.com/2023/11/24/share/</div>
     </div>
     <div class="license-meta">
       
@@ -334,7 +359,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年11月21日</div>
+          <div>2023年11月24日</div>
         </div>
       
       
@@ -366,18 +391,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/11/23/%E7%AE%80%E5%8D%95dp/" title="DP的简单应用">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">DP的简单应用</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/11/18/%E9%AB%98%E7%B2%BE/" title="高精度">
-                        <span class="hidden-mobile">高精度</span>
+                      <a href="/2023/11/23/ai/" title="模型笔记">
+                        <span class="hidden-mobile">模型笔记</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
