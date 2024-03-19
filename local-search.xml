@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Docker</title>
+    <link href="/2024/03/19/docker/"/>
+    <url>/2024/03/19/docker/</url>
+    
+    
+    <categories>
+      
+      <category>Docker</category>
+      
+      <category>服务器</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Docker</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Linux联网问题</title>
     <link href="/2024/03/14/LinuxFaBing/"/>
     <url>/2024/03/14/LinuxFaBing/</url>
@@ -57,14 +82,16 @@
     
     <categories>
       
-      <category>服务器代理</category>
+      <category>服务器</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>服务器代理</tag>
+      <tag>服务器</tag>
+      
+      <tag>nginx</tag>
       
     </tags>
     
