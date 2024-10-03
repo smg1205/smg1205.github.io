@@ -16,25 +16,23 @@
   <meta name="author" content="smg">
   <meta name="keywords" content="">
   
-    <meta name="description" content="DP的简单优化">
+    <meta name="description" content="VPN教程首先你需要有一个VPN服务提供商，这里推荐一元机场 (xn–4gq62f.org)，虽然不是很稳定，但是便宜 其次按照这个网站的教程，下载对应的Clash版本，在Clash的配置中，将VPN服务提供商的提供的链接，粘贴上去，下载即可 最后文明上网，方便你我">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DP的简单优化">
-<meta property="og:url" content="http://example.com/2024/04/11/dp%E5%B0%9D%E8%AF%95%E4%BC%98%E5%8C%96/index.html">
+<meta property="og:title" content="smg&#39;s wiki">
+<meta property="og:url" content="http://example.com/2024/10/03/VPN/index.html">
 <meta property="og:site_name" content="smg&#39;s wiki">
-<meta property="og:description" content="DP的简单优化">
+<meta property="og:description" content="VPN教程首先你需要有一个VPN服务提供商，这里推荐一元机场 (xn–4gq62f.org)，虽然不是很稳定，但是便宜 其次按照这个网站的教程，下载对应的Clash版本，在Clash的配置中，将VPN服务提供商的提供的链接，粘贴上去，下载即可 最后文明上网，方便你我">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-04-11T01:05:38.981Z">
-<meta property="article:modified_time" content="2024-04-11T01:07:15.463Z">
+<meta property="article:published_time" content="2024-10-03T02:07:33.601Z">
+<meta property="article:modified_time" content="2024-10-03T02:07:09.849Z">
 <meta property="article:author" content="smg">
-<meta property="article:tag" content="algorithm">
-<meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>DP的简单优化 - smg&#39;s wiki</title>
+  <title>smg&#39;s wiki</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +210,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="DP的简单优化"></span>
+            <span id="subtitle" data-typed-text=""></span>
           
         </div>
 
@@ -228,8 +226,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-04-11 09:05" pubdate>
-          2024年4月11日 上午
+        <time datetime="2024-10-03 10:07" pubdate>
+          2024年10月3日 上午
         </time>
       </span>
     
@@ -240,7 +238,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.4k 字
+          130 字
         
       </span>
     
@@ -287,35 +285,14 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">DP的简单优化</h1>
+            <h1 id="seo-header"></h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="DP的简单优化"><a href="#DP的简单优化" class="headerlink" title="DP的简单优化"></a>DP的简单优化</h1><span id="more"></span>
-
-
-
-<p>对于一个DP题，有可能不是简单的进行二维DP找出答案</p>
-<p>首先需要写出大概的模板，推导出DP状态转移方程，再根据DP状态转移方程去优化</p>
-<p>2023蓝桥杯 省赛B组的E题</p>
-<p><s>一眼直接判定为非DP</s></p>
-<p>首先写出简单的思路，有些类似最长连续子序列，然后进行线性DP，确定要求的属性为最大值，那么就是取其max值，并且进行对应的DP状态转移,$dp[j]&#x3D; max(dp[i] + 1,dp[j])$需要注意的是，当$dp[i]&#x3D;0$的时候，需要给$dp[j]$再加一</p>
-<p>给出转移代码，选择将每个数字进行字符串的存储，方便取到第一位和最后一位数字</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">if</span>(f[i][f[i].<span class="hljs-built_in">size</span>() - <span class="hljs-number">1</span>] == f[j][<span class="hljs-number">0</span>])<br>&#123;<br>    <span class="hljs-keyword">if</span>(dp[i]) dp[j] = <span class="hljs-built_in">max</span>(dp[j],dp[i] + <span class="hljs-number">1</span>);<br>    <span class="hljs-keyword">else</span> dp[j] = <span class="hljs-built_in">max</span>(dp[j],dp[i] + <span class="hljs-number">2</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>但是这样的爆搜进行DP的方式肯定是不行的，所以需要进行优化</p>
-<p>通过观察第一个状态转移方程来看，我们只需要关注的值只有一个数字的开头和结尾，并且在爆搜的过程中，进行了很多的重复动作</p>
-<p>例如，当我们在后面爆搜的时候，其实已经取到了最大值，但是进行了多次搜索，所以此时来思考如何来优化掉多余的部分</p>
-<p>其实只需要一次搜索即可完成对其最大值的选择，因为如果前面已经选择出当前位置的最大值，且$a_i$只需要去关注一下它的最开始的数字和最后的数字,下面给出优化后的DP状态转移方程。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++">dp[r] = <span class="hljs-built_in">max</span>(dp[r], dp[l] + <span class="hljs-number">1</span>);<br></code></pre></td></tr></table></figure>
-
-<p>给出无优化的DP解法</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= n;i ++) cin &gt;&gt; f[i];<br><br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= n;i ++)<br>&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = i + <span class="hljs-number">1</span>;j &lt;= n;j ++)<br>    &#123;<br>        <span class="hljs-keyword">if</span>(f[i][f[i].<span class="hljs-built_in">size</span>() - <span class="hljs-number">1</span>] == f[j][<span class="hljs-number">0</span>])<br>        &#123;<br>            <span class="hljs-keyword">if</span>(dp[i]) dp[j] = <span class="hljs-built_in">max</span>(dp[j],dp[i] + <span class="hljs-number">1</span>);<br>            <span class="hljs-keyword">else</span> dp[j] = <span class="hljs-built_in">max</span>(dp[j],dp[i] + <span class="hljs-number">2</span>);<br>        &#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-type">int</span> ans = <span class="hljs-number">0</span>;<br><br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= n;i ++)<br>&#123;<br>    ans = <span class="hljs-built_in">max</span>(ans,dp[i]);<br>&#125;<br><span class="hljs-keyword">if</span>(!ans) cout &lt;&lt; n - <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-string">&#x27;\n&#x27;</span>;<br><span class="hljs-keyword">else</span> cout &lt;&lt; n - ans &lt;&lt; <span class="hljs-string">&#x27;\n&#x27;</span>;<br></code></pre></td></tr></table></figure>
-
-<p>给出优化后的DP解法</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs c++"><br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= n;i ++)<br>&#123;<br>    string s;cin &gt;&gt; s;<br>    <span class="hljs-type">int</span> l = s[<span class="hljs-number">0</span>] - <span class="hljs-string">&#x27;0&#x27;</span>, r = s[s.<span class="hljs-built_in">size</span>() - <span class="hljs-number">1</span>] - <span class="hljs-string">&#x27;0&#x27;</span>;<br>    dp[r] = <span class="hljs-built_in">max</span>(dp[r], dp[l] + <span class="hljs-number">1</span>);<br>&#125;<br><br><br><span class="hljs-type">int</span> ans = <span class="hljs-number">0</span>;<br><br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= <span class="hljs-number">9</span>;i ++)<br>&#123;<br>    ans = <span class="hljs-built_in">max</span>(ans,dp[i]);<br>&#125;<br><span class="hljs-keyword">if</span>(!ans) cout &lt;&lt; n - <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-string">&#x27;\n&#x27;</span>;<br><span class="hljs-keyword">else</span> cout &lt;&lt; n - ans &lt;&lt; <span class="hljs-string">&#x27;\n&#x27;</span>;<br></code></pre></td></tr></table></figure>
-
+                <h3 id="VPN教程"><a href="#VPN教程" class="headerlink" title="VPN教程"></a>VPN教程</h3><h3 id="首先"><a href="#首先" class="headerlink" title="首先"></a>首先</h3><p>你需要有一个VPN服务提供商，这里推荐<a target="_blank" rel="noopener" href="https://一元.org/#/dashboard">一元机场 (xn–4gq62f.org)</a>，虽然不是很稳定，但是便宜</p>
+<h3 id="其次"><a href="#其次" class="headerlink" title="其次"></a>其次</h3><p>按照这个网站的教程，下载对应的Clash版本，在Clash的配置中，将VPN服务提供商的提供的链接，粘贴上去，下载即可</p>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>文明上网，方便你我</p>
 
                 
               </div>
@@ -324,36 +301,6 @@
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/algorithm/" class="category-chain-item">algorithm</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/algorithm/" class="print-no-link">#algorithm</a>
-      
-        <a href="/tags/%E7%AE%97%E6%B3%95/" class="print-no-link">#算法</a>
-      
-    </div>
   
 </div>
 
@@ -363,8 +310,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>DP的简单优化</div>
-      <div>http://example.com/2024/04/11/dp尝试优化/</div>
+      <div></div>
+      <div>http://example.com/2024/10/03/VPN/</div>
     </div>
     <div class="license-meta">
       
@@ -376,7 +323,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年4月11日</div>
+          <div>2024年10月3日</div>
         </div>
       
       
@@ -408,18 +355,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/10/03/VPN/" title="">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile"></span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/04/09/linux/" title="Linux">
-                        <span class="hidden-mobile">Linux</span>
+                      <a href="/2024/04/11/dp%E5%B0%9D%E8%AF%95%E4%BC%98%E5%8C%96/" title="DP的简单优化">
+                        <span class="hidden-mobile">DP的简单优化</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
