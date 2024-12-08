@@ -16,12 +16,12 @@
   <meta name="author" content="smg">
   <meta name="keywords" content="">
   
-    <meta name="description" content="理论部分JVM的发展JDK 1.0在推出时自带JVM Classic vm，只能以纯解释器的方法来运行Java代码（和Python一样，像C&#x2F;C++是编译运行），如果想使用JIT来进行优化还需要外挂，如果使用JIT，那么JVM就无法以纯解释的方法来运行代码，即二者只能存一。 JDK 1.2时，Sun 推出了Exact vm，尝试解决Classic vm的问题，不仅解决了两种编译方式无法同">
+    <meta name="description" content="理论部分JVM的发展JDK 1.0在推出时自带JVM Classic vm，只能以纯解释器的方法来运行Java代码（和Python一样，像C&#x2F;C++是编译运行），如果想使用JIT来进行优化还需要外挂，如果使用JIT，那么JVM就无法以纯解释的方法来运行代码，即二者只能存一。 JDK 1.2时，Sun 推出了Exact vm，尝试解决Classic vm的问题，不仅解决了两种编译方式无">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JVM理论部分">
 <meta property="og:url" content="http://example.com/2024/12/08/JVM%E7%90%86%E8%AE%BA/index.html">
 <meta property="og:site_name" content="smg&#39;s wiki">
-<meta property="og:description" content="理论部分JVM的发展JDK 1.0在推出时自带JVM Classic vm，只能以纯解释器的方法来运行Java代码（和Python一样，像C&#x2F;C++是编译运行），如果想使用JIT来进行优化还需要外挂，如果使用JIT，那么JVM就无法以纯解释的方法来运行代码，即二者只能存一。 JDK 1.2时，Sun 推出了Exact vm，尝试解决Classic vm的问题，不仅解决了两种编译方式无法同">
+<meta property="og:description" content="理论部分JVM的发展JDK 1.0在推出时自带JVM Classic vm，只能以纯解释器的方法来运行Java代码（和Python一样，像C&#x2F;C++是编译运行），如果想使用JIT来进行优化还需要外挂，如果使用JIT，那么JVM就无法以纯解释的方法来运行代码，即二者只能存一。 JDK 1.2时，Sun 推出了Exact vm，尝试解决Classic vm的问题，不仅解决了两种编译方式无">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="c:\Users\34861\AppData\Roaming\Typora\typora-user-images\image-20241208174253498.png">
 <meta property="og:image" content="c:\Users\34861\AppData\Roaming\Typora\typora-user-images\image-20241208174419928.png">
@@ -35,7 +35,7 @@
 <meta property="og:image" content="c:\Users\34861\AppData\Roaming\Typora\typora-user-images\image-20241208212008590.png">
 <meta property="og:image" content="c:\Users\34861\AppData\Roaming\Typora\typora-user-images\image-20241208212210656.png">
 <meta property="article:published_time" content="2024-12-08T13:47:09.750Z">
-<meta property="article:modified_time" content="2024-12-08T13:47:37.607Z">
+<meta property="article:modified_time" content="2024-12-08T13:50:03.935Z">
 <meta property="article:author" content="smg">
 <meta property="article:tag" content="JVM">
 <meta name="twitter:card" content="summary_large_image">
@@ -303,7 +303,9 @@
             
               <div class="markdown-body">
                 
-                <h2 id="理论部分"><a href="#理论部分" class="headerlink" title="理论部分"></a>理论部分</h2><h3 id="JVM的发展"><a href="#JVM的发展" class="headerlink" title="JVM的发展"></a>JVM的发展</h3><p>JDK 1.0在推出时自带JVM Classic vm，只能以纯解释器的方法来运行Java代码（和Python一样，像C&#x2F;C++是编译运行），如果想使用JIT来进行优化还需要外挂，如果使用JIT，那么JVM就无法以纯解释的方法来运行代码，即二者只能存一。</p>
+                <span id="more"></span>
+
+<h2 id="理论部分"><a href="#理论部分" class="headerlink" title="理论部分"></a>理论部分</h2><h3 id="JVM的发展"><a href="#JVM的发展" class="headerlink" title="JVM的发展"></a>JVM的发展</h3><p>JDK 1.0在推出时自带JVM Classic vm，只能以纯解释器的方法来运行Java代码（和Python一样，像C&#x2F;C++是编译运行），如果想使用JIT来进行优化还需要外挂，如果使用JIT，那么JVM就无法以纯解释的方法来运行代码，即二者只能存一。</p>
 <p>JDK 1.2时，Sun 推出了Exact vm，尝试解决Classic vm的问题，不仅解决了两种编译方式无法同时运行的问题，优化了虚拟机的对象查找方式，还具备了一些现代高性能处理器的功能，如：二级即时编译。但是仍未成为主虚拟机，在推出HotSpot之后作为备用虚拟机存在。</p>
 <p>JDK 1.3时，使用HotSpot作为JVM的虚拟机，HotSpot不仅拥有之前两个虚拟机的优点，还有新的技术，热点探测技术，这个技术是指用计数器统计最具有优化价值的代码，然后使用JIT对其进行深度优化，当时和ExactVM存在争议但是还是选择HotSpot作为主虚拟机。</p>
 <p>其实HotSpot也并非Sun公司自研的虚拟机而是收购其他公司，例如BEA JRockit和IBM J9 JVM也是其他公司研发的虚拟机。还存在性能更加强悍的虚拟机Azul VM 和 BEA Liquid VM。这些虚拟机需要运行在特定硬件平台上，要求较高，但是性能远超其他虚拟机。</p>
